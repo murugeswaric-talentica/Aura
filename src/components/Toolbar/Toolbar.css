@@ -1,0 +1,50 @@
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #2c3e50;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+
+.toolbar-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.toolbar-icon {
+  font-size: 16px;
+}
+
+.preview-button {
+  background-color: #27ae60;
+}
+
+.preview-button:hover {
+  background-color: #2ecc71;
+}
