@@ -1,0 +1,14 @@
+// Create Jest setup file to ensure proper setup for all tests
+import '@testing-library/jest-dom';
+
+// Mock matchMedia for tests that involve media queries
+window.matchMedia = window.matchMedia || function() {
+  return {
+    matches: false,
+    addListener: function() {},
+    removeListener: function() {},
+    addEventListener: function() {},
+    removeEventListener: function() {},
+    dispatchEvent: function() {},
+  };
+};

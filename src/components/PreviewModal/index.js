@@ -97,10 +97,28 @@ function PreviewModal() {
                       // Add extra styling to the iframe document to fix alignment
                       const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
                       const style = iframeDoc.createElement('style');
-                      style.textContent = `
-                        * { text-align: initial; }
-                        .aura-container { width: 100% !important; }
-                      `;
+                      
+                      // Different styling based on preview mode
+                      if (previewMode === PREVIEW_MODES.MOBILE) {
+                        style.textContent = `
+                          * { text-align: initial; }
+                          .aura-container { width: 100% !important; }
+                          .aura-component {
+                            position: relative !important;
+                            left: 0 !important;
+                            margin-left: 10px !important;
+                            margin-top: 10px !important;
+                            display: block !important;
+                            max-width: 330px !important;
+                          }
+                        `;
+                      } else {
+                        style.textContent = `
+                          * { text-align: initial; }
+                          .aura-container { width: 100% !important; }
+                        `;
+                      }
+                      
                       iframeDoc.head.appendChild(style);
                     } catch (e) {
                       console.error("Could not modify iframe document", e);

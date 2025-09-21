@@ -86,7 +86,7 @@ class EditorService {
     html += '    @media (max-width: 768px) {\n';
     html += '      body { width: 350px; margin: 0 auto; }\n';
     html += '      .aura-container { padding: 5px; position: relative; width: 100%; margin: 0; }\n';
-    html += '      .aura-component { max-width: 340px; }\n';
+    html += '      .aura-component { max-width: 340px; left: auto !important; right: auto !important; }\n';
     html += '    }\n';
     html += '  </style>\n';
     html += '</head>\n<body>\n';
@@ -107,6 +107,7 @@ class EditorService {
   generateComponentHtml(component) {
     const { type, position, id, ...properties } = component;
     const positionStyle = `left: ${position.x}px; top: ${position.y}px;`;
+    // Add mobile positioning attributes as data attributes to be used in media queries
     let style = `position: absolute; ${positionStyle} box-sizing: border-box; text-align: left; `;
     let html = '';
 
